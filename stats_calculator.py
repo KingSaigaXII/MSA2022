@@ -40,8 +40,13 @@ def main():
     #ask user to enter filename and open that file
     file_name = get_file_name()
     list_of_numbers = load_numbers_list(file_name)
-    median = calculate_median(list_of_numbers)
-    print(median)
+    if len(list_of_numbers) == 0:
+        print("File was empty.")
+    elif len(list_of_numbers) == 1:
+        print("Only one number in file.")
+    else:  
+        median = calculate_median(list_of_numbers)
+        print(median)
     #load numbers from file into a list
     
 main()
